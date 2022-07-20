@@ -10,11 +10,8 @@ fn cli() -> clap::Command<'static> {
         .subcommand(clap::Command::new("pack").about("Pack new box as template"))
 }
 
-use deno_runtime::deno_core;
-use deno_runtime::worker::MainWorker;
-
 fn main() {
-    let worker = MainWorker::bootstrap_from_options(deno_core::url::Url(), {}, {});
+    boxer_bridge::parse_configuration("config.ts");
     let matches = cli().get_matches();
 
     match matches.subcommand() {

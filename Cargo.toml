@@ -1,4 +1,5 @@
 [workspace]
 members = [
-    "crates/boxer_cli"
+    "crates/*"
 ]
+resolver = "2"
